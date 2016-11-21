@@ -1,4 +1,4 @@
-package net.seninp.csssrk4.rossler;
+package net.seninp.attractor.rossler;
 
 import org.apache.commons.math3.ode.FirstOrderDifferentialEquations;
 

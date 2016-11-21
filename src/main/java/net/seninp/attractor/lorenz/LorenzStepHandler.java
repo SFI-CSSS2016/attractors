@@ -1,11 +1,11 @@
-package net.seninp.csssrk4.rossler;
+package net.seninp.attractor.lorenz;
 
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import org.apache.commons.math3.ode.sampling.FixedStepHandler;
 
-public class RosslerStepHandler implements FixedStepHandler {
+public class LorenzStepHandler implements FixedStepHandler {
 
   ArrayList<String> steps = new ArrayList<String>();
 

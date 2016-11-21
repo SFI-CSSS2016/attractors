@@ -1,4 +1,4 @@
-package net.seninp.csssrk4.comet;
+package net.seninp.attractor.comet;
 
 import static java.lang.Math.PI;
 import static java.lang.Math.pow;

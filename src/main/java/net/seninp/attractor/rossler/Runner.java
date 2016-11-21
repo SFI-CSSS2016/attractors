@@ -1,4 +1,4 @@
-package net.seninp.csssrk4.lorenz;
+package net.seninp.attractor.rossler;
 
 import org.apache.commons.math3.ode.nonstiff.ClassicalRungeKuttaIntegrator;
 import org.apache.commons.math3.ode.sampling.StepNormalizer;
@@ -11,13 +11,13 @@ public class Runner {
     // 1.0E-20);
     ClassicalRungeKuttaIntegrator integrator = new ClassicalRungeKuttaIntegrator(0.01);
 
-    LorenzEquations equations = new LorenzEquations(28, 10, 8 / 3);
+    RosslerEquations equations = new RosslerEquations(0.432, 2., 4);
 
-    LorenzStepHandler lz = new LorenzStepHandler();
+    RosslerStepHandler lz = new RosslerStepHandler();
 
     integrator.addStepHandler(new StepNormalizer(0.01, lz));
 
-    integrator.integrate(equations, 0, new double[] { 0.99, 1., 1. }, 100, new double[3]);
+    integrator.integrate(equations, 0, new double[] { 1., 1., 1. }, 100, new double[3]);
 
   }
 

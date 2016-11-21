@@ -1,4 +1,4 @@
-package net.seninp.csssrk4.lorenz;
+package net.seninp.attractor.lorenz;
 
 import org.apache.commons.math3.ode.FirstOrderDifferentialEquations;
 
