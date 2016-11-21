@@ -1,4 +1,4 @@
-package net.seninp.csssrk4;
+package net.seninp.csssrk4.lorenz;
 
 import java.io.File;
 import java.io.PrintWriter;
