@@ -1,2 +1,2 @@
 # attractors
-Implements Lorenz and Russell attractors and solvers using classical Runge Kutta
+Implements Lorenz and Rössler attractors and solvers using classical Runge Kutta
