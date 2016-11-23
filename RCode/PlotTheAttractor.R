@@ -1,20 +1,39 @@
 library(data.table)
 #
-dd <- fread("../results.txt", header = F)
-plot(dd$V2, dd$V3)
-library(plotly)
+dd <- fread("../rossler_results_00.txt", header = F)
+#plot(dd[1:1024,]$V2, dd[1:1024,]$V3)
+names(dd) <- c("time", "x", "y", "z")
+ee <- fread("../../simplevoronoi/voronoi_edges.txt")
+names(ee) <- c("x", "y", "xend", "yend", "p1", "p2")
+#
+library(ggplot2)
+p <- ggplot(data = dd[1:1024,], aes(x = x, y = y)) +
+  theme_bw() + geom_point(color = "cornflowerblue") + geom_path(color = "red2") +
+  geom_segment(data = ee, aes(x = x, y = y, xend = xend, yend = yend))
+p
 
-p <- plot_ly(dd, x = ~V2, y = ~V3, z = 0,
-             type = 'scatter3d', mode = 'lines',
-             line = list(color = 'red', width = 1))
+
+library(plotly)
+p <- plot_ly(dd, x = ~x, y = ~y, z = ~z,
+             type = 'scatter3d', mode = 'points',
+             line = list(color = 'cornflowerblue', width = 1),
+             name = "Rössler attractor")
 p
 
 
 
 dd$group <- 1
 #
-dd1 <- fread("../results1.txt", header = F)
-names(dd1) <- c("X1", "X2", "X3")
+dd1 <- fread("../results.txt", header = F)
+names(dd1) <- c("t", "x", "y", "z")
+p <- plot_ly(dd1, x = ~x, y = ~y, z = ~z,
+             type = 'scatter3d', mode = 'points',
+             line = list(color = 'red', width = 1),
+             name = "Rössler attractor")
+p
+
+
+
 dd1$group2 <- 2
 #
 dat <- cbind(dd, dd1)

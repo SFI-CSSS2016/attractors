@@ -15,7 +15,7 @@ public class RosslerStepHandler implements FixedStepHandler {
 
     if (isLast) {
       try {
-        PrintWriter writer = new PrintWriter(new File("results.txt"), "UTF-8");
+        PrintWriter writer = new PrintWriter(new File("rossler_results_00.txt"), "UTF-8");
         for (String step : steps) {
           writer.println(step);
         }
